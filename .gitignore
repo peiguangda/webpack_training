@@ -1,0 +1,8 @@
+/node_modules
+/build/
+.module-cache
+chrome-user-data
+*.sublime-workspace
+/.idea
+*.iml
+

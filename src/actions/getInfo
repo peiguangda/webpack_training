@@ -1,0 +1,27 @@
+import axios from 'axios';
+import {loginSuccess, loginFail} from "./login";
+
+const Cookies = require('js-cookie');
+const apiUrl = 'http://localhost:8000/getUser/';
+
+export const getInfo = () => {
+    return (dispatch) => {
+        return axios({
+            method: 'GET',
+            url: apiUrl,
+            headers: {
+                'Authorization': Cookies.get("access_token"),
+            }
+        })
+            .then(response => {
+                if (response.data.success === true) {
+                    dispatch(loginSuccess(response));
+                } else {
+                    dispatch(loginFail());
+                }
+            })
+            .catch(error => {
+                throw(error);
+            });
+    };
+};
