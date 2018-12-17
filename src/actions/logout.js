@@ -13,5 +13,6 @@ export function logoutSuccess() {
     Cookies.remove('access_token');
     return {
         type: LOGOUT,
+        loading: true
     }
 }

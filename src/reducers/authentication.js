@@ -15,20 +15,20 @@ function authentication(state = initialState, action = {}) {
         case LOGIN_SUCCESS:
             return {
                 ...state,
-                loading: true,
+                loading: false,
                 loggingIn: true,
                 email: action.email,
             };
         case LOGIN_FAILURE:
             return {
                 ...state,
-                loading: true,
+                loading: false,
                 loggingIn: false,
             };
         case LOGOUT:
             return {
                 ...state,
-                loading: true,
+                loading: false,
                 loggingIn: false,
             };
         default:

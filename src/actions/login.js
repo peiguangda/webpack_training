@@ -33,12 +33,14 @@ export function loginSuccess(response) {
     return {
         type: LOGIN_SUCCESS,
         email: response.data.email,
-        access_token: response.data.token
+        access_token: response.data.token,
+        loading: true
     }
 }
 
 export function loginFail() {
     return {
         type: LOGIN_FAILURE,
+        loading: true
     }
 }
